@@ -23,6 +23,7 @@
 	<link href="{{ asset('webasset/css/main.css')}}" rel="stylesheet" />
 	<link href="{{ asset('webasset/css/nice-select.css')}}" rel="stylesheet" />
 	<link href="{{ asset('webasset/css/owl.carousel.css')}}" rel="stylesheet" />
+	
 
 	<link href="{{ asset('webasset/fonts/fontawesome-free-5.10.1-web/css/all.css')}}" rel="stylesheet" />
 	<link href="{{ asset('webasset/css/style.css')}}" rel="stylesheet" />
