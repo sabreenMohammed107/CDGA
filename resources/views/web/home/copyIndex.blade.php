@@ -454,6 +454,7 @@
 @section('scripts')
 <script>
 
+
 	$(document).ready(function() {
 		$('#downloadCurrentCalender').click(function() {
             var calender = $('input[name="calender"]').val();
