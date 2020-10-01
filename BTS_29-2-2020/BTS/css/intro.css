@@ -1,0 +1,309 @@
+﻿/
+
+
+/*tabs*/
+.tabs-left {
+  border-bottom: none;
+  border-right: 1px solid #ddd;
+}
+
+.tabs-left>li {
+  float: none;
+ margin:0px;
+  
+}
+.nav-tabs>li>a{
+	color:#000000;
+}
+.tabs-left>li.active>a,
+.tabs-left>li.active>a:hover,
+.tabs-left>li.active>a:focus {
+  border-bottom-color: #ddd;
+  border-right-color: transparent;
+  background:#FFA500;
+  border:none;
+  border-radius:0px;
+  margin:0px;
+  color:white;
+}
+.nav-tabs>li>a:hover {
+    /* margin-right: 2px; */
+    line-height: 1.42857143;
+    border: 1px solid transparent;
+     /*border-radius: 4px 4px 0 0;*/ 
+}
+.tabs-left>li.active>a::after{content: "";
+    position: absolute;
+    top: 10px;
+    right: -10px;
+    border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  
+  border-left: 10px solid #FFA500;
+    display: block;
+    width: 0;}
+
+
+
+/*--------------------------------------------------------------
+# Intro Section
+--------------------------------------------------------------*/
+#intro {
+  position: relative;
+  /*background-color: black;
+  background-color: rgba(4, 9, 30, 0.7);*/
+  height: 100vh;
+  min-height: 25rem;
+  width: 100%;
+  overflow: hidden;
+}
+#intro .container {
+  position: absolute;
+  top: 0px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  /* overflow: hidden; */
+}
+
+#intro video {
+ 
+  position: absolute;
+  left: 50%;
+  top: 100px;
+
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  overflow: hidden;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+#intro .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  /*background-color: rgba(4, 9, 30, 0.7);*/
+  /*background-color: red;*/
+  opacity: 0.8;
+  /*z-index: 1;*/
+}
+
+@media (pointer: coarse) and (hover: none) {
+  #intro {
+    background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
+  }
+  #intro video {
+    display: none;
+  }
+}
+.arrow-right {
+	width: 0px;
+	height: 0px;
+	border-top: 50px solid transparent;
+	border-bottom: 50px solid transparent;
+	border-left: 50px solid #FFA500;
+}
+
+.fixed-icon{
+			position:fixed;
+			top:200px;
+			left:0px;
+			z-index:999;
+		}
+		.f-icon{
+			background-color:#FFA500;
+			margin-bottom:3px;
+			padding:5px 8px 5px 10px;
+		}
+		.f-icon a i{
+			color:#fff;
+			font-size:25px;
+		}
+		.f-icon:hover{
+			background-color:#000000;
+		}
+		.f1 a i:hover:{
+			padding-right:50px;
+		}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/*********************************
+counter section
+*********************************/
+#section-counter{
+  padding: 60px 0;
+}
+.statistic {
+  text-align: center;
+  width: 100%;
+  max-width: 1366px;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+
+.statistic .text span{
+  display: block;
+  font-weight: 500;
+}
+/*-----------------------*/
+/* scedules Section
+--------------------------------*/
+#section-scedules{
+  padding: 60px 0;
+}
+.scedules {
+  text-align: center;
+  width: 100%;
+  max-width: 1366px;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+
+.scedules .last a{
+  text-decoration: none;
+    display: block;
+    margin: 0 5%;
+    padding: 10px 0;
+    
+    color: #fff ;
+    font-size: 16px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.scedules .last{
+  background: #FFA500; 
+  border-radius: 10px;
+  padding: 20px 0;
+}
+.scedules .last:hover{
+  background: #000; 
+ 
+}
+.scedules .last:hover a{
+  color: #fff; 
+}
+
+
+/*---------------------------*/
+/*chat*/
+.chat {
+	width: 300px;
+	position: fixed;
+	right: 10px;
+	background: #fff;
+	padding: 10px;
+	bottom: 90px;
+	display: none;
+	box-shadow: 0px 0px 10px 5px #ddd;
+	z-index:9999;
+}
+.chat .messages-box {
+	margin-top: 10px;
+	max-height: 300px;
+	transition: all 0.3s linear;
+}
+.chat .message {
+	padding: 5px 10px;
+	margin-bottom: 2px;
+	background-color: #5290F5;
+	color: #fff;
+	position: relative;
+	border-radius: 10px 0 0 10px;
+	width: 80%;
+	float: right;
+	transition: all 0.3s linear;
+}
+.chat .message:first-child {
+	border-radius: 10px 10px 0px 10px;
+}
+.chat .message:last-child {
+	border-radius: 10px 0px 10px 10px;
+}
+
+.chat .message.active {
+	background-color: #F37660;
+}
+.chat p {
+	margin: 0 10px 0 0;
+}
+
+.chat .fa {
+	position: absolute;
+	top: 5px;
+	right: 7px;
+	cursor: pointer;
+	font-size: 12px;
+	transform: scale(.5);
+	opacity: 0;
+	transition: all 0.3s linear;
+}
+.chat .fa:hover {
+}
+.chat .fa {
+	transform: scale(1);
+	opacity: 1;
+}
+.chat form {
+	border-top: 1px solid #ddd;
+	padding: 10px;
+	margin: -10px;
+	margin-top: 20px;
+	background-color: #fff;
+}
+
+.chat input {
+	padding: 7px 10px;
+	font-size: 15px;
+	width: 87%;
+	border: 1px solid #ddd;
+	color: #9A9797;
+	font-weight: 300;
+}
+.chat input:focus {
+	outline: inherit;
+}
+.chat .error {
+	border: 1px solid rgba(255, 0, 0, 0.5);
+}
+
+
+.chat button {
+	border: none;
+	background-color: transparent;
+	font-size: 18px;
+	color: #FFA500;
+	cursor: pointer;
+}
+.chat button:focus {
+	outline: inherit;
+}
+
+.message-icon{
+  width:40px;
+  height:40px;
+  /*background:#FFA500;*/
+  line-height:40px;
+  text-align:center;
+  color:#fff;
+  font-size:20px;
+  border-radius:50%;
+  position:fixed;
+  bottom:30px;
+  right:30px;
+  cursor:pointer;
+  z-index:9999;
+}
