@@ -12,7 +12,6 @@
 	<meta property="og:image" content="http://convertaholics.com/convertaholics-og.png" />
 	<link rel="shortcut icon" type="image/x-icon" href="{{ asset('webasset/images/100.jpg')}}">
 
-
 	<link href="{{ asset('webasset/css/animate.css')}}" rel="stylesheet" />
 	<link href="{{ asset('webasset/css/bootstrap.css')}}" rel="stylesheet" />
 	<link href="{{ asset('webasset/css/font-awesome.min.css')}}" rel="stylesheet" />
@@ -23,7 +22,7 @@
 	<link href="{{ asset('webasset/css/main.css')}}" rel="stylesheet" />
 	<link href="{{ asset('webasset/css/nice-select.css')}}" rel="stylesheet" />
 	<link href="{{ asset('webasset/css/owl.carousel.css')}}" rel="stylesheet" />
-	
+
 
 	<link href="{{ asset('webasset/fonts/fontawesome-free-5.10.1-web/css/all.css')}}" rel="stylesheet" />
 	<link href="{{ asset('webasset/css/style.css')}}" rel="stylesheet" />
