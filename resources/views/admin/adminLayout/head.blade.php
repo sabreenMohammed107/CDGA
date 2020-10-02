@@ -6,7 +6,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>BTS Admin</title>
+  <title>CDGA Admin</title>
   <!-- Iconic Fonts -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="{{ asset('adminasset/vendors/iconic-fonts/font-awesome/css/all.min.css')}}" rel="stylesheet">
@@ -28,7 +28,7 @@
   <!-- Mystic styles -->
   <link href="{{ asset('adminasset/css/style.css')}}" rel="stylesheet">
   <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('adminasset/img/logo/150.jpg')}}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('webasset/images/100.jpg')}}">
 
   <!--Search sabreen-->
  

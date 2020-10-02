@@ -7,7 +7,7 @@
         </div>
   
         <div class="logo-sn logo-sm ms-d-block-sm">
-          <a class="pl-0 ml-0 text-center navbar-brand mr-0" href="index.html"><img src="{{ asset('adminasset/img/logo/150.jpg')}}" alt="logo"> </a>
+          <a class="pl-0 ml-0 text-center navbar-brand mr-0" href="index.html"><img src="{{ asset('webasset/images/100.jpg')}}" alt="logo"> </a>
         </div>
   
         <ul class="ms-nav-list ms-inline mb-0" id="ms-nav-options">
