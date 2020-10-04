@@ -79,6 +79,7 @@
 		<div class="container">
 		<div class="text-holder">
        
+	   
 					<h1 class="text-uppercase" style="color:#000000">
 						{{ $homeSlider->slider_en_title }}
 					</h1>
