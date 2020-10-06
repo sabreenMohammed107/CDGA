@@ -119,7 +119,7 @@
 						$sub=4;
 						?>
 					
-					<a href='{{url ("/courses/$catId/$catId/date") }}' style="font-size:16px">البرامج العربية</a></li>
+				{<!-- <a href='{{url ("/courses/$catId/$catId/date") }}' style="font-size:16px">البرامج العربية</a></li> -->--}}	
 						</ul>
 					</div>
 				</div>
