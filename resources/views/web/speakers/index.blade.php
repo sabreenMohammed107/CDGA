@@ -19,7 +19,7 @@
 			<h4 style="padding-bottom:30px;color:#FFA500">Are you highly qualified, experienced and respected in your field of technical expertise ?</h4>
 			<h4 style="padding-bottom:30px">Then, YOU ARE WHO WE’RE LOOKING FOR!</h4>
 			<hr />
-			<p>At BTS, commitment to excellence is at the core of everything we do and we are always looking to welcome motivated, talented and experienced professionals to support our growth. If you have the passion to deliver training courses, seminars and workshops with the highest standards, we invite you to view our current openings for experienced trainers below:</p>
+			<p>At CDGA, commitment to excellence is at the core of everything we do and we are always looking to welcome motivated, talented and experienced professionals to support our growth. If you have the passion to deliver training courses, seminars and workshops with the highest standards, we invite you to view our current openings for experienced trainers below:</p>
 		</div>
 </section>
 

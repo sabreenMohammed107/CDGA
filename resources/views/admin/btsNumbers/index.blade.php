@@ -8,7 +8,7 @@
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
       <a href="{{url('admin')}}"><i class="material-icons"></i> {{ __('Home') }} </a></li>
-      <li class="breadcrumb-item active" aria-current="page"> {{ __('Bts-Numbers') }} </li>
+      <li class="breadcrumb-item active" aria-current="page"> {{ __('CDGA-Numbers') }} </li>
     </ol>
   </nav>
 
@@ -23,8 +23,8 @@
 
   <div class="ms-panel">
     <div class="ms-panel-header d-flex justify-content-between">
-    <h6>BTS_numbers</h6>
-        <a href="#" class="btn btn-dark" data-toggle="modal" data-target="#addnumber"> add BTS_numbers </a>
+    <h6>CDGA_numbers</h6>
+        <a href="#" class="btn btn-dark" data-toggle="modal" data-target="#addnumber"> add CDGA_numbers </a>
     </div>
     <div class="ms-panel-body">
       <div class="table-responsive">

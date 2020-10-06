@@ -86,7 +86,7 @@
 				</div>
 				<div class="col-lg-2 col-md-6 col-sm-6">
 					<div class="single-footer-widget">
-						<h4>JOIN BTS</h4>
+						<h4>JOIN CDGA</h4>
 						<ul>
 							<li><a href="{{ route('joinus') }}">Jobs</a></li>
 							<li><a href="{{ route('speakers') }}">Speakers</a></li>

@@ -38,7 +38,7 @@
 						<a href="">ABOUT</a>
 						<ul>
 							<li class="menu-has-children">
-								<a href="{{url('/aboutUs')}}">ABOUT BTS</a>
+								<a href="{{url('/aboutUs')}}">ABOUT CDGA</a>
 							</li>
 							<li class="menu-has-children">
 								<a href="">Services</a>

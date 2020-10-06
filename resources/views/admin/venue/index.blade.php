@@ -23,7 +23,7 @@
 
   <div class="ms-panel">
     <div class="ms-panel-header d-flex justify-content-between">
-    <h6>BTS_Venue</h6>
+    <h6>CDGA_Venue</h6>
         <a href="#" class="btn btn-dark" data-toggle="modal" data-target="#addnumber"> add Venue</a>
     </div>
     <div class="ms-panel-body">

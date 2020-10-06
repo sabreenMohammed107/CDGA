@@ -125,7 +125,7 @@
                         <a href="{{ url('category/'.$catId) }}">
                             <h4><i class="fas fa-users" style="color:#FFA500;font-size:20px"></i> Soft skills Categories</h4>
                         </a>
-                        <p>BTS offers a range of Soft Skills training courses which provides delegates opportunities to develop ..
+                        <p>CDGA offers a range of Soft Skills training courses which provides delegates opportunities to develop ..
                         </p>
 
                     </div>
@@ -280,8 +280,8 @@
 <div class="row d-flex justify-content-center" style="margin:0px !important">
     <div class="menu-content pb-15">
         <div class="title text-center">
-            <h4 class="text-color" style="font-family:pruistin;font-size:30px;padding-top:50px">Bts in Numbers</h4>
-            <h1 class="mb-10" style="font-size:30px">Bts in Numbers</h1>
+            <h4 class="text-color" style="font-family:pruistin;font-size:30px;padding-top:50px">CDGA in Numbers</h4>
+            <h1 class="mb-10" style="font-size:30px">CDGA in Numbers</h1>
             <p>We will never stop improving</p>
         </div>
     </div>
@@ -404,8 +404,8 @@
 <div class="row d-flex justify-content-center" style="margin:0px !important">
     <div class="menu-content pb-15">
         <div class="title text-center">
-            <h4 class="text-color" style="font-family:pruistin;font-size:30px;padding-top:50px">BTS Schedules</h4>
-            <h1 class="mb-10" style="font-size:30px">Download Complete BTS Schedules Here</h1>
+            <h4 class="text-color" style="font-family:pruistin;font-size:30px;padding-top:50px">CDGA Schedules</h4>
+            <h1 class="mb-10" style="font-size:30px">Download Complete CDGA Schedules Here</h1>
             <p>We will never stop improving</p>
         </div>
     </div>

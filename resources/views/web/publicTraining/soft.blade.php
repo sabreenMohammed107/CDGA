@@ -65,8 +65,8 @@
 		<div class="row d-flex justify-content-center" style="margin:0px !important">
 			<div class="menu-content pb-15">
 				<div class="title text-center">
-					<h4 class="text-color" style="font-family:pruistin;font-size:30px;padding-top:50px">BTS Schedules</h4>
-					<h1 class="mb-10" style="font-size:30px">Download The Complete BTS Training Schedules Here</h1>
+					<h4 class="text-color" style="font-family:pruistin;font-size:30px;padding-top:50px">CDGA Schedules</h4>
+					<h1 class="mb-10" style="font-size:30px">Download The Complete CDGA Training Schedules Here</h1>
 				</div>
 			</div>
 		</div>

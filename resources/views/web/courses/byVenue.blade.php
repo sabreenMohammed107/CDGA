@@ -277,14 +277,14 @@
                             <h4>Technical Team</h4>
                         </a>
                         <p>
-                        BTS keen to selects highly technical instructors based on professional field experience                    </div>
+                        CDGA keen to selects highly technical instructors based on professional field experience                    </div>
                     <div class="col single-detials">
                         <span class="lnr lnr-license" style="color:#FFA500"></span>
                         <a href="#">
                             <h4>Strengths and capabilities</h4>
                         </a>
                         <p>
-                        Since BTS was established, it considered a training partner for world class oil & gas institution
+                        Since CDGA was established, it considered a training partner for world class oil & gas institution
                                                 </p>
                     </div>
                 </div>

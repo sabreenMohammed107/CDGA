@@ -1573,7 +1573,7 @@ td:first-child { width:75%; }
 			<div class="overlay overlay-bg"></div>
 			<div class="row justify-content-center">
 				<div class="wrap">
-					<h1 class="text-white">Download BTS Training Calendar</h1>
+					<h1 class="text-white">Download CDGA Training Calendar</h1>
 					<p>
 					We will never stop improving					</p>
 					<a class="primary-btn" id="downloadCurrentCalender" >

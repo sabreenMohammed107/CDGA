@@ -6,7 +6,7 @@
     
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href=""><i class="material-icons"></i> {{ __('BTS Home') }} </a></li>
+      <li class="breadcrumb-item"><a href=""><i class="material-icons"></i> {{ __('CDGA Home') }} </a></li>
     </ol>
   </nav>
 

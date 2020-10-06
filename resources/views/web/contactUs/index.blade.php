@@ -28,7 +28,7 @@
 				<div class="menu-content pb-50 col-lg-8">
 					<div class="title text-center">
 						<h4 class="text-color" style="font-family:pruistin;font-size:30px">Contact Us</h4>
-						<h1 class="mb-10" style="font-size:30px">BTS Offices and Branches</h1>
+						<h1 class="mb-10" style="font-size:30px">CDGA Offices and Branches</h1>
 						<p>We will never stop improving</p>
 					</div>
 				</div>

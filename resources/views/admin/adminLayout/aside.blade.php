@@ -27,7 +27,7 @@
         <li> <a href="{{ route('course.index') }}">Courses</a> </li>
         <li> <a href="{{ route('round.index') }}">Rounds</a> </li>
         <!-- <li> <a href="{{ route('slider.index') }}">Home Slider</a> </li> -->
-					<li> <a href="{{ route('number.index') }}">BTS Numbers</a> </li>
+					<li> <a href="{{ route('number.index') }}">CDGA Numbers</a> </li>
 					<li> <a href="{{ route('branch.index') }}">Branches </a> </li>
 		<li> <a href="{{ route('trainer.index') }}">Trainers </a> </li>
 		<li> <a href="{{ route('yearCalender.index') }}">Year Calendars </a> </li>

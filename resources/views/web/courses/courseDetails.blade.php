@@ -441,7 +441,7 @@
                             <div class="col-lg-12 sidebar-widgets">
                                 <div class="widget-wrap" style="border:none !important">
                                     <div class="single-sidebar-widget popular-post-widget">
-                                        <h4 class="popular-title">BTS Online Training Solution</h4>
+                                        <h4 class="popular-title">CDGA Online Training Solution</h4>
                                         <div class="popular-post-list">
                                             <div class="single-post-list d-flex flex-row align-items-center">
                                                 <div class="thumb">
@@ -598,7 +598,7 @@
                             <h4>Technical Team</h4>
                         </a>
                         <p>
-                            BTS keen to selects highly technical instructors based on professional field experience
+                        CDGA keen to selects highly technical instructors based on professional field experience
                     </div>
                     <div class="col single-detials">
                         <span class="lnr lnr-license" style="color:#FFA500"></span>
@@ -606,7 +606,7 @@
                             <h4>Strengths and capabilities</h4>
                         </a>
                         <p>
-                            Since BTS was established, it considered a training partner for world class oil & gas institution
+                            Since CDGA was established, it considered a training partner for world class oil & gas institution
                         </p>
                     </div>
                 </div>

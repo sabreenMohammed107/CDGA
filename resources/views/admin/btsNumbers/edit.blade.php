@@ -8,7 +8,7 @@
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
       <a href="{{url('admin')}}"><i class="material-icons"></i> {{ __('Home') }} </a></li>
-      <li class="breadcrumb-item active" aria-current="page"> {{ __('BTS Number') }} </li>
+      <li class="breadcrumb-item active" aria-current="page"> {{ __('CDGA Number') }} </li>
     </ol>
   </nav>
 

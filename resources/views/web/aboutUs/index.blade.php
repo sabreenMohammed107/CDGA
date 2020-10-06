@@ -28,7 +28,7 @@
 					We are an international engineering & management training and consulting firm, providing training programs and consulting services to hundreds of organizations in UK and abroad. We have built our reputation on providing innovative solutions and custom-designed training programs to address problems and challenges facing our clients in rapidly changing times. Since 2000, we have trained more than 25,000 people who have applied effective time-saving procedures and techniques to increase productivity, ultimately resulting in an improved bottom line for our clients.					</p>
 					<br>
 					<p>
-					BTS offers you high quality, professional services that will increase your productivity and decrease your expenses.
+					CDGA offers you high quality, professional services that will increase your productivity and decrease your expenses.
 <br>
 					We strive to:
 					<ul>
@@ -90,7 +90,7 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<blockquote class="generic-blockquote">
-						BTS is a client-centric service provider where our service quality focuses on ultimate customer satisfaction which serves as the cornerstone of the business. We see our success in the success of our clients in reaching their goals - that's the value we place.
+						CDGA is a client-centric service provider where our service quality focuses on ultimate customer satisfaction which serves as the cornerstone of the business. We see our success in the success of our clients in reaching their goals - that's the value we place.
  
  Our customer service strategy is evaluated constantly throughout the year to measure our performance to meet the customers' expectations and their needs along with the associated performances of venues and trainers. We focus on building excellent relationships with our clients to enhance their satisfaction with us which is our pride and the tool to benchmark and measure our success.
 					 </div>
