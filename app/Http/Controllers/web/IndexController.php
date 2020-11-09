@@ -45,7 +45,7 @@ class IndexController extends Controller
 
         // new 
         $now_date = now();
-        $poprounds = Round::where('rounds.active', '=', 1)->where('round_start_date', '>', $now_date)->orderBy('round_start_date', 'asc')->take(4)->get();
+        $poprounds = Round::where('rounds.active', '=', 1)->where('round_start_date', '>', $now_date)->orderBy('round_start_date', 'asc')->get();
         $venues=Venue::all();
         $subCategories=CourseSubCategory::where('active', '=',1)->get();
         $rounds =Round::with('course')->with('country')->with('venue')->where('active', '=',1)->where('show_home_order','!=',null)->orderBy('show_home_order', 'asc')->take(8)->get();

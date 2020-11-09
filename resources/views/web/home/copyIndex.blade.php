@@ -11,16 +11,15 @@
 </div>
 <!--End Social Icon-->
 <style>
- 
-</style>                
-               
+
+</style>
 <!-- start banner Area -->
-<section class="banner-area relative" id="home" style="background: url({{ asset('webasset/images/banner-bg.jpg')}}) right;
+<section class="banner-area search-course-area relative" id="home" style="background: url({{ asset('webasset/images/banner-bg.jpg')}}) right;
     background-size: cover">
     <div class="overlay overlay-bg"></div>
     <div class="container">
         <div class="row fullscreen d-flex align-items-center justify-content-between">
-            <div class="banner-content col-lg-9 col-md-12">
+            <div class="banner-content col-lg-8 col-md-12">
                 <h1 class="text-uppercase">
                     We Ensure better education
                     for a better world
@@ -30,10 +29,46 @@
                 </p>
                 <a href="#" class="primary-btn text-uppercase">Get Started</a>
             </div>
+            <div class="col-lg-4 col-md-12 search-course-right section-gap">
+                <form action="{{route('searchForm')}}" class="form-wrap">
+
+                    <h4 class="text-white pb-20 text-center mb-30">Search for Available Course</h4>
+                    <label class="text-white">Enter Key Words</label>
+                    <input type="text" class="form-control" name="wordName" placeholder="Key Words">
+                    <label class="text-white">Category</label>
+                    <div class="form-select mb-10" id="service-select">
+                        <select name="category_id">
+                            <option datd-display="">Choose Category</option>
+                            @foreach ($subCategories as $category)
+                            <option value='{{$category->id}}'>
+                                {{ $category->subcategory_en_name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <label class="text-white">Venue</label>
+                    <div class="form-select mb-10" id="service-select">
+                        <select>
+                            <option datd-display="">Choose Venue</option>
+                            @foreach ($venues as $venue)
+                            <option value='{{$venue->id}}'>
+                                {{ $venue->venue_en_name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <label class="text-white">Start Date</label>
+                    <input name="start" placeholder="From Date" class="form-control " type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date">
+                    <label class="text-white">End Date</label>
+                    <input name="end" placeholder="To Date" class="form-control" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date">
+                    <div style="margin:15px 5px 10px 0px">
+                        <input type="submit" value="Search" class="form-control btn text-uppercase" style="background-color:#FFA500;color:#fff;" />
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </section>
 <!-- End banner Area -->
+
 
 <!-- Start blog Area -->
 <section class="blog-area section-gap" id="blog">
@@ -47,8 +82,9 @@
             </div>
         </div>
         <div class="row">
+        <div class="active-popular-carusel">
             @foreach($poprounds as $round)
-            <div class="col-lg-3 col-md-6 single-blog">
+            <div class="single-popular-carusel single-blog">
                 <div class="thumb">
                     <img class="img-fluid" style="width:100%;height:250px" src="{{ asset('uploads/courses')}}/{{ $round->course->course_image_thumbnail }}" alt="{{ $round->course->course_image_thumbnail }}">
                 </div>
@@ -87,26 +123,29 @@
             </div>
             @endforeach
         </div>
+        </div>
     </div>
 </section>
 <!-- End blog Area -->
 
 
 <!-- Start search-course Area -->
-<section class="search-course-area relative">
-    <div class="overlay overlay-bg"></div>
-    <div class="container">
-        <div class="row justify-content-between align-items-center">
-            <div class="col-lg-6 col-md-6 search-course-left">
+<section class="search-course-area relative"style="padding-top:0px">
+		<div class="overlay overlay-bg"></div>
+		<div class="container">
+			<div class="row justify-content-between align-items-center">
+				<div class="col-lg-4 col-md-4 search-course-left">
                 <h1 class="text-white">
                     Our Services
                 </h1>
-                <p>
+                <p class="text-white">
                     inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially in the workplace. That’s why it’s crucial that, as women, our behavior on the job is beyond reproach.
                 </p>
-                <div class="row details-content">
-                    <div class="col single-detials">
-                        <span class="lnr lnr-license"></span>
+				</div>
+                <div class="col-lg-4 col-md-4 search-course-left">
+					<div class="row details-content">
+						<div class="col single-detials">
+							<span class="lnr lnr-license"></span>
                         <?php
                         $catId = 1;
                         ?>
@@ -116,77 +155,39 @@
                         <p class="text-white">
                             Our training programs are designed to maximize delegate participation.
                             Participants .. </p>
-                    </div>
-                    <div class="col single-detials">
-                        <span class="lnr lnr-license"></span>
+                            </div>
+					</div>
+					<div class="row details-content">
+						<div class="col single-detials">
+							<span class="lnr lnr-license"></span>
                         <?php
                         $catId = 2;
                         ?>
                         <a href="{{ url('category/'.$catId) }}">
                             <h4><i class="fas fa-users" style="color:#FFA500;font-size:20px"></i> Soft skills Categories</h4>
                         </a>
-                        <p>CDGA offers a range of Soft Skills training courses which provides delegates opportunities to develop ..
+                        <p class="text-white" >CDGA offers a range of Soft Skills training courses which provides delegates opportunities to develop ..
                         </p>
-
-                    </div>
-                </div>
-                <div class="row details-content">
-                    <div class="col single-detials">
-                        <span class="lnr lnr-license"></span>
+                        </div>
+					</div>
+                        <div class="row details-content">
+						<div class="col single-detials">
+							<span class="lnr lnr-license"></span>
                         <?php
                         $catId = 3;
                         ?>
                         <a href="{{ url('category/'.$catId) }}">
                             <h4><i class="fas fa-graduation-cap" style="color:#FFA500;font-size:20px"></i> Certified Courses</h4>
                         </a>
-                        <p>
+                        <p class="text-white">
                             Why do some participants take Professional Certificate training course? According to The Guide to ..
                         </p>
-                    </div>
-                    <div class="col ">
-
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 search-course-right section-gap">
-               
-                <form action="{{route('searchForm')}}" class="search-area">
-
-                    <h4 class="text-white pb-20 text-center mb-30">Search for Available Course</h4>
-                    <label class="text-white">Enter Key Words</label>
-                    <input type="text" class="form-control" name="wordName" placeholder="Key Words">
-                    <label class="text-white">Category</label>
-                    <div class="form-select mb-10" id="service-select">
-                        <select  name="category_id">
-                            <option datd-display="">Choose Category</option>
-                            @foreach ($subCategories as $category)
-                            <option value='{{$category->id}}'>
-                                {{ $category->subcategory_en_name }}</option>
-                            @endforeach
-                        </select>
                         </div>
-                    <label class="text-white">Venue</label>
-                    <div class="form-select mb-10" id="service-select">
-                        <select>
-                            <option datd-display="">Choose Venue</option>
-                            @foreach ($venues as $venue)
-                            <option value='{{$venue->id}}'>
-                                {{ $venue->venue_en_name }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <label class="text-white">Start Date</label>
-                    <input name="start" placeholder="From Date" class="form-control " type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date">
-                    <label class="text-white">End Date</label>
-                    <input name="end" placeholder="To Date" class="form-control" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date">
-                    <div style="margin:15px 5px 10px 0px">
-                        <input type="submit" value="Search" class="form-control btn text-uppercase" style="background-color:#FFA500;color:#fff;" />
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 <!-- End search-course Area -->
 
 <!-- Start Popular Courses Area -->
