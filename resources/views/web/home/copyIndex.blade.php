@@ -96,7 +96,7 @@
                             @if($round->course->course_sub_category_id==4)
                             <h5 style="border:none; padding-bottom:30px;text-align:right">{{ Str::limit($round->course->course_en_name, 130,'') }}</h5>
                             @else
-                            <h5 style="border:none; padding-bottom:50px;">{{ Str::limit($round->course->course_en_name, 89,'') }}</h5>
+                            <h5 style="border:none; padding:50px 0;">{{ Str::limit($round->course->course_en_name, 89,'') }}</h5>
                             @endif
                         </a>
                     </p>
