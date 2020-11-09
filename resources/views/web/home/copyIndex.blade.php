@@ -86,7 +86,7 @@
             @foreach($poprounds as $round)
             <div class="single-popular-carusel single-blog">
                 <div class="thumb">
-                    <img class="img-fluid" style="width:100%;height:250px" src="{{ asset('uploads/courses')}}/{{ $round->course->course_image_thumbnail }}" alt="{{ $round->course->course_image_thumbnail }}">
+                    <img class="img-fluid" style="width:100%;height:230px" src="{{ asset('uploads/courses')}}/{{ $round->course->course_image_thumbnail }}" alt="{{ $round->course->course_image_thumbnail }}">
                 </div>
                 <?php $date = date_create($round->round_start_date) ?>
                 <div style=" position: relative ;height: 18%; border-bottom:1px solid #ccc;">
@@ -96,7 +96,7 @@
                             @if($round->course->course_sub_category_id==4)
                             <h5 style="border:none; padding-bottom:30px;text-align:right">{{ Str::limit($round->course->course_en_name, 130,'') }}</h5>
                             @else
-                            <h5 style="border:none; padding-bottom:30px;">{{ Str::limit($round->course->course_en_name, 89,'') }}</h5>
+                            <h5 style="border:none; padding-bottom:50px;">{{ Str::limit($round->course->course_en_name, 89,'') }}</h5>
                             @endif
                         </a>
                     </p>
