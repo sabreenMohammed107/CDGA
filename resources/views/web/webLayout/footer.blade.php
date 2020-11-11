@@ -172,7 +172,7 @@
 </div>
 
 					</div>
-				<a href="https://horizontechs.com/ar/" target="blank">	<img style="display: block; float:left; opacity:0.8 ;margin-top:-25px " src="{{ asset('webasset/images/horizon.png')}}"> </a>
+				<a href="https://horizontechs.com/ar/" target="blank">	<img style="display: block; float:left; opacity:0.8 ;margin-top:-25px " src="{{ asset('webasset/images/horiz.png')}}"> </a>
 
 				</div>
 			</div>

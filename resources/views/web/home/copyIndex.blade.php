@@ -21,13 +21,15 @@
         <div class="row fullscreen d-flex align-items-center justify-content-between">
             <div class="banner-content col-lg-8 col-md-12">
                 <h1 class="text-uppercase">
-                    We Ensure better education
-                    for a better world
+                Explore Your Opportunities at CDGA
                 </h1>
                 <p class="pt-10 pb-10 text-white">
-                    In the history of modern astronomy, there is probably no one greater leap forward than the building and launch of the space telescope known as the Hubble.
-                </p>
-                <a href="#" class="primary-btn text-uppercase">Get Started</a>
+                Whatever your learning goals, we can help you achieve them                </p>
+                <?php 
+						$current=now()->year;
+						$next=$current+1;
+						?>
+                <a href="{{ url('calender/'.$current) }}" class="primary-btn text-uppercase">Get Started</a>
             </div>
             <div class="col-lg-4 col-md-12 search-course-right section-gap">
                 <form action="{{route('searchForm')}}" class="form-wrap">
