@@ -116,7 +116,7 @@ class CourseController extends Controller
         $final2 = date("Y-m-d", strtotime("+1 month", $time2));
 
 
-        $filtters = Round::where('active', '=', 1)->where('round_start_date', '>', $final)->where('round_end_date', '<', $final);
+        $filtters = Round::where('active', '=', 1)->where('round_start_date', '>', Carbon::parse($final));
 
         if (!empty($request->get("category_id"))) {
 
