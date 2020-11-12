@@ -115,31 +115,31 @@ class CourseController extends Controller
 
         $filtters = Round::where('active', '=', 1)->where('round_start_date', '>', $final);
 
-        if (!empty($request->get("category_id"))) {
+        // if (!empty($request->get("category_id"))) {
 
-            $filtters->whereHas('course', function ($q) use ($request) {
-                $q->where('course_sub_category_id', '=', $request->get('category_id'));
-            });
-        }
+        //     $filtters->whereHas('course', function ($q) use ($request) {
+        //         $q->where('course_sub_category_id', '=', $request->get('category_id'));
+        //     });
+        // }
 
-        if (!empty($request->get("city_id"))) {
+        // if (!empty($request->get("city_id"))) {
 
-            $filtters->where('venue_id', '=', $request->get("city_id"));
-        }
-        if (!empty($request->get("start"))) {
-            $filtters->where('round_start_date', '>=', Carbon::parse($request->get("start")));
-        }
-        if (!empty($request->get("end"))) {
+        //     $filtters->where('venue_id', '=', $request->get("city_id"));
+        // }
+        // if (!empty($request->get("start"))) {
+        //     $filtters->where('round_start_date', '>=', Carbon::parse($request->get("start")));
+        // }
+        // if (!empty($request->get("end"))) {
 
-            $filtters->where('round_start_date', '<=', Carbon::parse($request->get("end")));
-        }
+        //     $filtters->where('round_start_date', '<=', Carbon::parse($request->get("end")));
+        // }
 
-        if (!empty($request->get("wordName"))) {
+        // if (!empty($request->get("wordName"))) {
 
-            $filtters->whereHas('course', function ($q) use ($request) {
-                $q->where('course_en_name', 'like', '%' . $request->get("wordName") . '%');
-            });
-        }
+        //     $filtters->whereHas('course', function ($q) use ($request) {
+        //         $q->where('course_en_name', 'like', '%' . $request->get("wordName") . '%');
+        //     });
+        // }
         $filterd = $filtters->get();
 
         $now_date = now();
