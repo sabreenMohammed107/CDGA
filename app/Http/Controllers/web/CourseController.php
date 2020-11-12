@@ -143,7 +143,7 @@ class CourseController extends Controller
         $filterd = $filtters->get();
 
         $now_date = now();
-\Log::info([$filterd,$request->get("wordName"),$final]);
+\Log::info([$filterd,$request->get("wordName"),$final,$request->get("end")]);
         $randomRounds = Round::where('active', '=', 1)->where('rounds.round_start_date', '>', $now_date)->paginate(8);
         $objectCourses = Course::orderBy("course_en_name", "asc")->get();
         return view('web.search.index', compact('objectCourses', 'randomRounds', 'filterd'));
