@@ -116,26 +116,27 @@ class CourseController extends Controller
         $final2 = date("Y-m-d", strtotime("+1 month", $time2));
 
 
-        $filtters = Round::where('active', '=', 1)->where('round_start_date', '>', Carbon::parse($final));
+        $filtters = Round::where('active', '=', 1)->where('round_start_date', '>', Carbon::parse($final))
+        ->where('round_end_date', '<', Carbon::parse($final2));
 
-        if (!empty($request->get("category_id"))) {
+        // if (!empty($request->get("category_id"))) {
 
-            $filtters->whereHas('course', function ($q) use ($request) {
-                $q->where('course_sub_category_id', '=', $request->get('category_id'));
-            });
-        }
+        //     $filtters->whereHas('course', function ($q) use ($request) {
+        //         $q->where('course_sub_category_id', '=', $request->get('category_id'));
+        //     });
+        // }
 
-        if (!empty($request->get("city_id"))) {
+        // if (!empty($request->get("city_id"))) {
 
-            $filtters->where('venue_id', '=', $request->get("city_id"));
-        }
-        if (!empty($request->get("start"))) {
-            $filtters->where('round_start_date', '>=', Carbon::parse($request->get("start")));
-        }
-        if (!empty($request->get("end"))) {
+        //     $filtters->where('venue_id', '=', $request->get("city_id"));
+        // }
+        // if (!empty($request->get("start"))) {
+        //     $filtters->where('round_start_date', '>=', Carbon::parse($request->get("start")));
+        // }
+        // if (!empty($request->get("end"))) {
 
-            $filtters->where('round_end_date', '<=', Carbon::parse($request->get("end")));
-        }
+        //     $filtters->where('round_end_date', '<=', Carbon::parse($request->get("end")));
+        // }
 
         if (!empty($request->get("wordName"))) {
 
