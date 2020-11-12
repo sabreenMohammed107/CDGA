@@ -110,7 +110,7 @@ class CourseController extends Controller
         $start = $request->input('start');
         $end = $request->input('end');
 
-        $time = strtotime("2021.02.01");
+        $time = strtotime("2021-02-01");
         $final = date("Y-m-d", strtotime("+1 month", $time));
 
         $filtters = Round::where('active', '=', 1)->where('round_start_date', '>', $final);
