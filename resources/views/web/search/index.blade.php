@@ -29,6 +29,9 @@
 			</div>
 			<br />
 			<div class="container">
+            <?php
+            print_r($filterd);
+            ?>
 				<table class="table table-striped">
 					<thead style="">
 						<tr style="border-bottom:solid #FFA500">
@@ -38,6 +41,7 @@
 						</tr>
 					</thead>
 					<tbody>
+
                         @foreach($filterd as $round)
 						<tr>
                     <td style="width:25%;">
