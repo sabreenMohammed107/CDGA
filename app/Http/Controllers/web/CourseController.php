@@ -21,6 +21,7 @@ use App\Mail\QuickEnqueryNotification;
 use App\Mail\DawnloadNotification;
 use App\Mail\CouseOfferNotification;
 use App\Mail\RegisterNotification;
+
 class CourseController extends Controller
 {
     /**
@@ -28,7 +29,7 @@ class CourseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    
+
     public function index()
     {
         //
@@ -100,72 +101,72 @@ class CourseController extends Controller
         //
     }
 
-public function searchForm(Request $request){
-    
-    $word= $request->input('wordName');
-    $category_id=$request->input('category_id');
-    $city_id=$request->input('city_id');
-   $start= $request->input('start');
-   $end=$request->input('end');
-   $filtters = Round::where('active','=',1);
+    public function searchForm(Request $request)
+    {
 
-   if(!empty($request->get("category_id"))){
+        $word = $request->input('wordName');
+        $category_id = $request->input('category_id');
+        $city_id = $request->input('city_id');
+        $start = $request->input('start');
+        $end = $request->input('end');
 
-    $filtters->whereHas('course', function ($q)use ( $request) {
-        $q->where('course_sub_category_id', '=',$request->get('category_id'));
-     });
+        $time = strtotime("2021.02.01");
+        $final = date("Y-m-d", strtotime("+1 month", $time));
 
-    }
+        $filtters = Round::where('active', '=', 1)->where('round_start_date', '>', $final);
 
-      if(!empty($request->get("city_id"))){
+        if (!empty($request->get("category_id"))) {
 
-    $filtters->where('venue_id','=',$request->get("city_id"));
-       }
-         if(!empty($request->get("start"))){
-    $filtters->where('round_start_date','>=',Carbon::parse($request->get("start")));
-  
-      }
-if(!empty($request->get("end"))){
+            $filtters->whereHas('course', function ($q) use ($request) {
+                $q->where('course_sub_category_id', '=', $request->get('category_id'));
+            });
+        }
 
-    $filtters->where('round_start_date','<=',Carbon::parse($request->get("end")));
+        if (!empty($request->get("city_id"))) {
 
-   
-} 
+            $filtters->where('venue_id', '=', $request->get("city_id"));
+        }
+        if (!empty($request->get("start"))) {
+            $filtters->where('round_start_date', '>=', Carbon::parse($request->get("start")));
+        }
+        if (!empty($request->get("end"))) {
 
-if(!empty($request->get("wordName"))){
+            $filtters->where('round_start_date', '<=', Carbon::parse($request->get("end")));
+        }
 
-    $filtters->whereHas('course', function ($q)use ( $request) {
-        $q->where('course_en_name', 'like', '%'.$request->get("wordName"). '%');
-     });
-   
-} 
+        if (!empty($request->get("wordName"))) {
+
+            $filtters->whereHas('course', function ($q) use ($request) {
+                $q->where('course_en_name', 'like', '%' . $request->get("wordName") . '%');
+            });
+        }
         $filterd = $filtters->get();
-        
+
         $now_date = now();
-           
-           $randomRounds = Round::where('active','=',1)->where('rounds.round_start_date', '>', $now_date)->paginate(8);
-           $objectCourses =Course::orderBy("course_en_name", "asc")->get();
-        return view('web.search.index', compact('objectCourses','randomRounds', 'filterd'));
-}
+
+        $randomRounds = Round::where('active', '=', 1)->where('rounds.round_start_date', '>', $now_date)->paginate(8);
+        $objectCourses = Course::orderBy("course_en_name", "asc")->get();
+        return view('web.search.index', compact('objectCourses', 'randomRounds', 'filterd'));
+    }
 
     public  function filterCourses($category_id, $subCategory_id, $filter_type)
     {
-        $objectCourses =Course::orderBy("course_en_name", "asc")->get();
+        $objectCourses = Course::orderBy("course_en_name", "asc")->get();
         $now_date = now();
         $filterd_rounds = array();
         $round_months = array();
         $round_days = array();
         $round_places = array();
-        $round_year=array();
+        $round_year = array();
         $subCategory_rounds = array();
         $courseCategory = CourseCategory::where('id', '=', $category_id)->firstOrFail();
         $courseSubCategory = CourseSubCategory::with('rounds')->where('id', '=', $subCategory_id)->firstOrFail();
-       
+
         $view_page = 'web.courses.';
         switch ($filter_type) {
             case 'title':
                 $filterd_rounds = $courseSubCategory->rounds()->where('rounds.active', '=', 1)->orderBy('course_en_name', 'asc')->get();
-               
+
                 $view_page .= 'byTitle';
                 break;
             case 'venue':
@@ -195,16 +196,14 @@ if(!empty($request->get("wordName"))){
                 foreach ($courses as $course) {
                     foreach ($course->rounds as $round) {
                         if ($round->round_start_date > $now_date && $round->active == 1) {
-                            $month = date("F", strtotime($round->round_start_date)).'-'.date("Y", strtotime($round->round_start_date));
+                            $month = date("F", strtotime($round->round_start_date)) . '-' . date("Y", strtotime($round->round_start_date));
                             $round['month'] = $month;
-                             //sasa
-                             $year=date("Y", strtotime($round->round_start_date));
-                             $round['year'] = $year;
+                            //sasa
+                            $year = date("Y", strtotime($round->round_start_date));
+                            $round['year'] = $year;
                             array_push($subCategory_rounds, $round);
                             array_push($round_months, $month);
                             array_push($round_year, $year);
-                            
-                           
                         }
                     }
                 }
@@ -213,42 +212,41 @@ if(!empty($request->get("wordName"))){
                     if (strtotime($round1->round_start_date) > strtotime($round2->round_start_date))
                         return 1;
                     else if (strtotime(($round1->round_start_date) < strtotime($round2->round_start_date)))
-                     
-                    return -1;
-                   
+
+                        return -1;
+
                     else
                         return 0;
-               
-                    });
-                  
-                  
-                    $round_months = array_unique($round_months);
-                    $round_year = array_unique($round_year);
-                   
-                    usort( $round_months , function($a, $b){
-                        $a = strtotime($a);
-                        $b = strtotime($b);
-                        return $a - $b;
-                    });
+                });
 
-                    usort( $round_year , function($a, $b){
-                        $a = strtotime($a);
-                        $b = strtotime($b);
-                        return $a - $b;
-                    });
-                  
-                
-                    foreach ($round_months as $round_month) {
-                        $short = substr($round_month, 0, strrpos($round_month, '-'));
-                      $long= substr($round_month, strrpos($round_month, '-'));
-                        // return($short);
-              
+
+                $round_months = array_unique($round_months);
+                $round_year = array_unique($round_year);
+
+                usort($round_months, function ($a, $b) {
+                    $a = strtotime($a);
+                    $b = strtotime($b);
+                    return $a - $b;
+                });
+
+                usort($round_year, function ($a, $b) {
+                    $a = strtotime($a);
+                    $b = strtotime($b);
+                    return $a - $b;
+                });
+
+
+                foreach ($round_months as $round_month) {
+                    $short = substr($round_month, 0, strrpos($round_month, '-'));
+                    $long = substr($round_month, strrpos($round_month, '-'));
+                    // return($short);
+
                     $obj = new Collection();
                     $obj->month = $round_month;
                     $obj->year = $year;
                     $obj->rounds = array();
                     foreach ($subCategory_rounds as $round) {
-                       
+
                         if ($round->month === $round_month) {
                             array_push($obj->rounds, $round);
                         }
@@ -256,7 +254,7 @@ if(!empty($request->get("wordName"))){
                     array_push($filterd_rounds, $obj);
                 }
 
-              
+
 
                 $view_page .= 'byDate';
                 break;
@@ -283,7 +281,7 @@ if(!empty($request->get("wordName"))){
                 break;
         };
         $randomRounds = $courseSubCategory->rounds()->where('rounds.active', '=', 1)->where('rounds.round_start_date', '>', $now_date)->paginate(8);
-        return view($view_page, compact('randomRounds', 'courseCategory', 'courseSubCategory', 'filterd_rounds','objectCourses'));
+        return view($view_page, compact('randomRounds', 'courseCategory', 'courseSubCategory', 'filterd_rounds', 'objectCourses'));
     }
 
     public function courseDetails($course_id)
@@ -296,42 +294,42 @@ if(!empty($request->get("wordName"))){
         $venues = Venue::all();
         $countries = Country::all();
         $saluts = ApplicantSalut::all();
-        $objectCourses =Course::orderBy("course_en_name", "asc")->get();
-        return view('web.courses.courseDetails', compact('objectCourses','venues', 'countries', 'course', 'rounds', 'specfic_round', 'related_courses', 'saluts'));
+        $objectCourses = Course::orderBy("course_en_name", "asc")->get();
+        return view('web.courses.courseDetails', compact('objectCourses', 'venues', 'countries', 'course', 'rounds', 'specfic_round', 'related_courses', 'saluts'));
     }
 
     public function registerApplicants(Request $request)
     {
         $request->validate([
-          
+
             'captcha' => 'required|captcha'
         ]);
         $data = $request->all();
-       $quick= Applicant::create($data);
-       $emails = ['senior.steps.info@gmail.com','info@btsconsultant.com','nasser@btsconsultant.com'];
- 
-          \Mail::to($emails)->send(new QuickEnqueryNotification($quick));
-       
-          if (!$request->get('courseBrochure')) {
+        $quick = Applicant::create($data);
+        $emails = ['senior.steps.info@gmail.com', 'info@btsconsultant.com', 'nasser@btsconsultant.com'];
+
+        \Mail::to($emails)->send(new QuickEnqueryNotification($quick));
+
+        if (!$request->get('courseBrochure')) {
             return redirect()->back()->with('message', 'Thanks; your request has been submitted successfully !');
-       }
+        }
     }
-   
+
     public function registerApplicantsDawnload(Request $request)
     {
         $request->validate([
-          
+
             'captcha' => 'required|captcha'
         ]);
         $data = $request->all();
-       $dawnload= Applicant::create($data);
-      
-       $emails = ['senior.steps.info@gmail.com','info@btsconsultant.com','nasser@btsconsultant.com'];
- 
-           \Mail::to($emails)->send(new DawnloadNotification($dawnload));
-       
-          if (!$request->get('courseBrochure')) {
-           
+        $dawnload = Applicant::create($data);
+
+        $emails = ['senior.steps.info@gmail.com', 'info@btsconsultant.com', 'nasser@btsconsultant.com'];
+
+        \Mail::to($emails)->send(new DawnloadNotification($dawnload));
+
+        if (!$request->get('courseBrochure')) {
+
             return redirect()->back()->with('message', 'Thanks; your request has been submitted successfully !');
         }
     }
@@ -340,7 +338,7 @@ if(!empty($request->get("wordName"))){
     {
         $countries = Country::all();
         $course = Course::with('subCategory')->where('id', '=', $course_id)->firstOrFail();
-      
+
         return view('web.courses.downloadBrochure', compact('course', 'countries'));
     }
 
@@ -375,77 +373,76 @@ if(!empty($request->get("wordName"))){
     public function registerApplicantRounds(Request $request)
     {
         $request->validate([
-          
+
             'captcha' => 'required|captcha'
         ]);
-        $applicant_data['salut_id']=$request->get('salut_id');
-        $applicant_data['name']=$request->get('name');
-        $applicant_data['country_id']=$request->get('country_id');
-        $applicant_data['job_title']=$request->get('job_title');
-        $applicant_data['company']=$request->get('company');
-        $applicant_data['venue_id']=$request->get('venue_id');
-        $applicant_data['address']=$request->get('address');
-        $applicant_data['email']=$request->get('email');
-        $applicant_data['phone']=$request->get('phone');
-        $applicant_data['mobile']=$request->get('mobile');
-        $applicant_data['fax']=$request->get('fax');
-        $applicant_data['register_round_id']=$request->get('register_round_id');
-        $applicant_data['applicant_type_id']=$request->get('applicant_type_id');
-        $applicant_id =Applicant::create($applicant_data);
-       
-        $billing_data['salut_id']=$request->get('billing_salut_id');
-        $billing_data['name']=$request->get('billing_name');
-        $billing_data['job_title']=$request->get('billing_job_title');
-        $billing_data['company']=$request->get('billing_company');
-        $billing_data['address']=$request->get('billing_address');
-        $billing_data['venue_id']=$request->get('billing_venue_id');
-        $billing_data['country_id']=$request->get('billing_country_id');
-        $billing_data['phone']=$request->get('billing_phone');
-        $billing_data['email']=$request->get('billing_email');
-        $billing_data['applicant_id']=$applicant_id->id;
-        $billingDetails=BillingDetails::create($billing_data);
-       
-        $emails = ['senior.steps.info@gmail.com','info@btsconsultant.com','nasser@btsconsultant.com'];
- 
-         \Mail::to($emails)->send(new RegisterNotification($applicant_id,$billingDetails));
+        $applicant_data['salut_id'] = $request->get('salut_id');
+        $applicant_data['name'] = $request->get('name');
+        $applicant_data['country_id'] = $request->get('country_id');
+        $applicant_data['job_title'] = $request->get('job_title');
+        $applicant_data['company'] = $request->get('company');
+        $applicant_data['venue_id'] = $request->get('venue_id');
+        $applicant_data['address'] = $request->get('address');
+        $applicant_data['email'] = $request->get('email');
+        $applicant_data['phone'] = $request->get('phone');
+        $applicant_data['mobile'] = $request->get('mobile');
+        $applicant_data['fax'] = $request->get('fax');
+        $applicant_data['register_round_id'] = $request->get('register_round_id');
+        $applicant_data['applicant_type_id'] = $request->get('applicant_type_id');
+        $applicant_id = Applicant::create($applicant_data);
+
+        $billing_data['salut_id'] = $request->get('billing_salut_id');
+        $billing_data['name'] = $request->get('billing_name');
+        $billing_data['job_title'] = $request->get('billing_job_title');
+        $billing_data['company'] = $request->get('billing_company');
+        $billing_data['address'] = $request->get('billing_address');
+        $billing_data['venue_id'] = $request->get('billing_venue_id');
+        $billing_data['country_id'] = $request->get('billing_country_id');
+        $billing_data['phone'] = $request->get('billing_phone');
+        $billing_data['email'] = $request->get('billing_email');
+        $billing_data['applicant_id'] = $applicant_id->id;
+        $billingDetails = BillingDetails::create($billing_data);
+
+        $emails = ['senior.steps.info@gmail.com', 'info@btsconsultant.com', 'nasser@btsconsultant.com'];
+
+        \Mail::to($emails)->send(new RegisterNotification($applicant_id, $billingDetails));
         return redirect()->back()->with('message', 'Thanks; your request has been submitted successfully !');
-    
     }
 
     public function refreshCaptcha()
     {
-      
-        return response()->json(['captcha'=> captcha_img()]);
+
+        return response()->json(['captcha' => captcha_img()]);
     }
 
-    public function reducedForm(Request $request){
+    public function reducedForm(Request $request)
+    {
         $request->validate([
-            'name'=>'required',
+            'name' => 'required',
             'phone' => 'required',
-            'email'=>'required',
+            'email' => 'required',
             'course_id' => 'required',
-           
-       
+
+
         ]);
-     
-        $data=[
-            'name'=>$request->input('name'),
-             'phone'=>$request->input('phone'),
-             'email'=>$request->input('email'),
-             'course_id'=>$request->input('course_id'),
-             'applicant_type_id'=>4,
-            
-            
-             
-                         ];
- 
-              
-            $App=Applicant::create($data);
-            $emails = ['senior.steps.info@gmail.com','info@btsconsultant.com','nasser@btsconsultant.com'];
- 
-         \Mail::to($emails)->send(new CouseOfferNotification($App));
- 
-            return redirect()->back()->with('message', 'Thanks; your request has been submitted successfully !');
-  
+
+        $data = [
+            'name' => $request->input('name'),
+            'phone' => $request->input('phone'),
+            'email' => $request->input('email'),
+            'course_id' => $request->input('course_id'),
+            'applicant_type_id' => 4,
+
+
+
+        ];
+
+
+        $App = Applicant::create($data);
+        $emails = ['senior.steps.info@gmail.com', 'info@btsconsultant.com', 'nasser@btsconsultant.com'];
+
+        \Mail::to($emails)->send(new CouseOfferNotification($App));
+
+        return redirect()->back()->with('message', 'Thanks; your request has been submitted successfully !');
     }
 }
