@@ -112,8 +112,11 @@ class CourseController extends Controller
 
         $time = strtotime("2021-01-01");
         $final = date("Y-m-d", strtotime("+1 month", $time));
+        $time2 = strtotime("2021-01-26");
+        $final2 = date("Y-m-d", strtotime("+1 month", $time2));
 
-        $filtters = Round::where('active', '=', 1)->where('round_start_date', '>', $final);
+
+        $filtters = Round::where('active', '=', 1)->where('round_start_date', '>', $final)->where('round_end_date', '<', $final);
 
         if (!empty($request->get("category_id"))) {
 
@@ -143,7 +146,7 @@ class CourseController extends Controller
         $filterd = $filtters->get();
 
         $now_date = now();
-        
+
 \Log::info([$filterd,$request->get("wordName"),$final,$request->get("end")]);
         $randomRounds = Round::where('active', '=', 1)->where('rounds.round_start_date', '>', $now_date)->paginate(8);
         $objectCourses = Course::orderBy("course_en_name", "asc")->get();
