@@ -111,7 +111,7 @@ class CourseController extends Controller
         $end = $request->input('end');
 
         $now_date = now();
-        $filtters = Round::where('active', '=', 1)->where('round_start_date', '>', $now_date);
+        $filtters = Round::where('active', '=', 1);
 
 
         if (!empty($request->get("category_id"))) {

@@ -39,13 +39,14 @@
                     <input type="text" class="form-control" name="wordName" placeholder="Key Words">
                     <label class="text-white">Category</label>
                     <div class="form-select mb-10" id="service-select">
-                        <select name="category_id">
-                            <option value="">Choose Category</option>
+                    <select  name="category_id">
+								<option value="">Select Category..</option>
                             @foreach ($subCategories as $category)
-                            <option value='{{$category->id}}'>
-                                {{ $category->subcategory_en_name }}</option>
-                            @endforeach
-                        </select>
+                                        <option value='{{$category->id}}' >
+                                         {{ $category->subcategory_en_name }}</option>
+                                           @endforeach
+									
+								</select>
                     </div>
                     <label class="text-white">Venue</label>
                     <div class="form-select mb-10" id="service-select">
