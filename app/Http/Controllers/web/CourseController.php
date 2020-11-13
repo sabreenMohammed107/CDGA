@@ -129,7 +129,7 @@ public function searchForm(Request $request){
       }
 if(!empty($request->get("end"))){
 
-    $filtters->where('round_end_date','<=',Carbon::parse($request->get("end")));
+    $filtters->where('round_start_date','>=',Carbon::parse($request->get("end")));
 
    
 } 
@@ -144,7 +144,7 @@ if(!empty($request->get("wordName"))){
         $filterd = $filtters->get();
         
         $now_date = now();
-           
+         \Log::info($filterd);  
            $randomRounds = Round::where('active','=',1)->where('rounds.round_start_date', '>', $now_date)->paginate(8);
            $objectCourses =Course::orderBy("course_en_name", "asc")->get();
         return view('web.search.index', compact('objectCourses','randomRounds', 'filterd'));

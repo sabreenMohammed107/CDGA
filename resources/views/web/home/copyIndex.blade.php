@@ -49,8 +49,8 @@
                     </div>
                     <label class="text-white">Venue</label>
                     <div class="form-select mb-10" id="service-select">
-                        <select>
-                            <option datd-display="">Choose Venue</option>
+                        <select name="city_id">
+                            <option datd-display="" >Choose Venue</option>
                             @foreach ($venues as $venue)
                             <option value='{{$venue->id}}'>
                                 {{ $venue->venue_en_name }}</option>
