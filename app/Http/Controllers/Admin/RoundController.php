@@ -42,8 +42,8 @@ class RoundController extends Controller
     public function index()
     {
         $now_date = now();
-        $rounds= Round::where('rounds.active', '=', 1)->where('round_start_date', '>', $now_date)->take(12)->inRandomOrder()->get();
-        // $rounds=Round::orderBy("created_at", "Desc")->get();
+        // $rounds= Round::where('rounds.active', '=', 1)->where('round_start_date', '>', $now_date)->take(12)->inRandomOrder()->get();
+        $rounds=Round::orderBy("created_at", "Desc")->get();
       
       
         return view($this->viewName.'index', compact('rounds'));
