@@ -108,9 +108,8 @@ public function searchForm(Request $request){
    $start= $request->input('start');
    $end=$request->input('end');
   
-  
-  
-   $filtters = Round::where('active','=',1);
+   $now_date = now();
+   $filtters = Round::where('active','=',1)->where('round_start_date', '>', $now_date);
 
    if(!empty($request->get("category_id"))){
 
