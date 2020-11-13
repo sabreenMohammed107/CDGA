@@ -40,7 +40,7 @@
                     <label class="text-white">Category</label>
                     <div class="form-select mb-10" id="service-select">
                         <select name="category_id">
-                            <option datd-display="">Choose Category</option>
+                            <option value="">Choose Category</option>
                             @foreach ($subCategories as $category)
                             <option value='{{$category->id}}'>
                                 {{ $category->subcategory_en_name }}</option>
