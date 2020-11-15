@@ -8,7 +8,8 @@
 						<li><a href="https://www.facebook.com/Best-Technology-Solutions-101762614785390/" target="_blank" ><i class="fab fa-facebook-f"></i></a></li>
 						<li><a href="https://twitter.com/bts_consultants" target="_blank"><i class="fab fa-twitter"></i></a></li>
 						<li><a href="https://www.linkedin.com/company/best-technology-solutions-bts" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
-						<li><a href="https://wa.me/?text={{ urlencode('http://test.btsconsultant.com/public/') }}" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+						<li><a href="https://wa.me/353879459509" target="_blank" ><i class="fab fa-whatsapp"></i></a></li>
+						<!-- <li><a href="https://wa.me/?text={{ urlencode('http://test.btsconsultant.com/public/') }}" target="_blank"><i class="fab fa-whatsapp"></i></a></li> -->
 						<li><a href="https://www.instagram.com/best_technology_solutions/" target="_blank" ><i class="fab fa-instagram"></i></a></li>
 					</ul>
 				</div>
