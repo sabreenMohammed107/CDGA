@@ -6,7 +6,7 @@
 				<div class="title text-center">
 					<h4 class="text-color" style="font-family:pruistin;font-size:30px">Get in Touch</h4>
 					<h1 class="mb-10" style="font-size:30px">We Would Love To Hear From You!</h1>
-					<p>We will never stop improving</p>
+					<p>Learning With Us Is The Ticket To Success</p>
 				</div>
 			</div>
 		</div>
