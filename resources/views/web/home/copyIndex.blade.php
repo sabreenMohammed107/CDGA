@@ -72,64 +72,62 @@
 </section>
 <!-- End banner Area -->
 
-
-<!-- Start blog Area -->
+<!-- Start Popular Courses Area -->
 <section class="blog-area section-gap" id="blog">
     <div class="container">
         <div class="row d-flex justify-content-center">
-            <div class="menu-content pb-70 col-lg-8">
+            <div class="menu-content pb-15">
                 <div class="title text-center">
-                    <h1 class="mb-10">Popular Courses</h1>
-                    <p>In the history of modern astronomy there is.</p>
+                    <h4 class="text-color" style="font-family:pruistin;font-size:30px;padding-top:50px">Upcoming Courses</h4>
+                    <h1 class="mb-10" style="font-size:30px">Upcoming Courses We Offer</h1>
+                    <p>Learning With Us Is The Ticket To Success</p>
                 </div>
             </div>
-        </div>
-        <div class="row">
-        <div class="active-popular-carusel">
-            @foreach($poprounds as $round)
-            <div class="single-popular-carusel single-blog">
-                <div class="thumb">
-                    <img class="img-fluid" style="width:100%;height:230px" src="{{ asset('uploads/courses')}}/{{ $round->course->course_image_thumbnail }}" alt="{{ $round->course->course_image_thumbnail }}">
+            <div class="row">
+                @foreach($rounds as $round)
+                <div class="col-lg-3 col-md-6 single-blog">
+                    <div class="thumb">
+                        <img class="img-fluid" style="width:100%;height:250px" src="{{ asset('uploads/courses')}}/{{ $round->course->course_image_thumbnail }}" alt="{{ $round->course->course_image_thumbnail}}">
+                    </div>
+                    <?php $date = date_create($round->round_start_date) ?>
+                    <div style=" position: relative ;height: 18%; border-bottom:1px solid #ccc;">
+
+                        <p style="margin-top:10px;margin-bottom:20px; " class="meta">
+                            <a href="{{ url('courseDetails/'.$round->course->id) }}">
+                                @if($round->course->course_sub_category_id==4)
+                                <h5 style="border:none; padding-bottom:30px;text-align:right">{{ Str::limit($round->course->course_en_name, 130,'') }}</h5>
+                                @else
+                                <h5 style="border:none; padding-bottom:30px;">{{ Str::limit($round->course->course_en_name, 89,'') }}</h5>
+                                @endif
+                            </a>
+                        </p>
+                        <p class="meta" style="margin-top:10px; position: absolute;bottom:0">
+                            {{ $round->venue->venue_en_name }} - {{ $round->country->country_en_name }} | {{ date_format($date,"d M, Y") }}
+                            </a></p>
+                    </div>
+
+                    <div style="padding: 0 0 30px 0;">
+
+                        @if($round->course->course_sub_category_id==4)
+                        <p style="direction: rtl;">
+                            {{ Str::limit($round->course->course_en_desc, 400, '...') }}
+                        </p>
+                        @else
+                        </p>
+                        {{ Str::limit($round->course->course_en_desc, 200, ' ...') }}
+                        </p>
+                        @endif
+
+
+                        <a href="{{ url('courseDetails/'.$round->course->id) }}" style="position: absolute; bottom: 0;" class="details-btn d-flex justify-content-center align-items-center"><span class="details">Details</span><span class="lnr lnr-arrow-right"></span></a>
+                    </div>
                 </div>
-                <?php $date = date_create($round->round_start_date) ?>
-                <div style=" position: relative ;height: 18%; border-bottom:1px solid #ccc;">
-
-                    <p style="margin-top:10px;margin-bottom:20px; " class="meta">
-                        <a href="{{ url('courseDetails/'.$round->course->id) }}">
-                            @if($round->course->course_sub_category_id==4)
-                            <h5 style="border:none; padding-bottom:30px;text-align:right">{{ Str::limit($round->course->course_en_name, 130,'') }}</h5>
-                            @else
-                            <h5 style="border:none; padding:50px 0;">{{ Str::limit($round->course->course_en_name, 89,'') }}</h5>
-                            @endif
-                        </a>
-                    </p>
-                    <p class="meta" style="margin-top:10px; position: absolute;bottom:0">
-                        {{ $round->venue->venue_en_name }} - {{ $round->country->country_en_name }} | {{ date_format($date,"d M, Y") }}
-                        </a></p>
-                </div>
-
-                <div style="padding: 0 0 30px 0;">
-
-                    @if($round->course->course_sub_category_id==4)
-                    <p style="direction: rtl;">
-                        {{ Str::limit($round->course->course_en_desc, 400, '...') }}
-                    </p>
-                    @else
-                    </p>
-                    {{ Str::limit($round->course->course_en_desc, 200, ' ...') }}
-                    </p>
-                    @endif
-
-
-                    <a href="{{ url('courseDetails/'.$round->course->id) }}" style="position: absolute; bottom: 0;" class="details-btn d-flex justify-content-center align-items-center"><span class="details">Details</span><span class="lnr lnr-arrow-right"></span></a>
-                </div>
+                @endforeach
             </div>
-            @endforeach
         </div>
-        </div>
-    </div>
 </section>
-<!-- End blog Area -->
+<!-- End Popular Courses Area -->
+
 
 
 <!-- Start search-course Area -->
@@ -193,61 +191,7 @@
 	</section>
 <!-- End search-course Area -->
 
-<!-- Start Popular Courses Area -->
-<section class="blog-area section-gap" id="blog">
-    <div class="container">
-        <div class="row d-flex justify-content-center">
-            <div class="menu-content pb-15">
-                <div class="title text-center">
-                    <h4 class="text-color" style="font-family:pruistin;font-size:30px;padding-top:50px">Upcoming Courses</h4>
-                    <h1 class="mb-10" style="font-size:30px">Upcoming Courses We Offer</h1>
-                    <p>We will never stop improving</p>
-                </div>
-            </div>
-            <div class="row">
-                @foreach($rounds as $round)
-                <div class="col-lg-3 col-md-6 single-blog">
-                    <div class="thumb">
-                        <img class="img-fluid" style="width:100%;height:250px" src="{{ asset('uploads/courses')}}/{{ $round->course->course_image_thumbnail }}" alt="{{ $round->course->course_image_thumbnail}}">
-                    </div>
-                    <?php $date = date_create($round->round_start_date) ?>
-                    <div style=" position: relative ;height: 18%; border-bottom:1px solid #ccc;">
 
-                        <p style="margin-top:10px;margin-bottom:20px; " class="meta">
-                            <a href="{{ url('courseDetails/'.$round->course->id) }}">
-                                @if($round->course->course_sub_category_id==4)
-                                <h5 style="border:none; padding-bottom:30px;text-align:right">{{ Str::limit($round->course->course_en_name, 130,'') }}</h5>
-                                @else
-                                <h5 style="border:none; padding-bottom:30px;">{{ Str::limit($round->course->course_en_name, 89,'') }}</h5>
-                                @endif
-                            </a>
-                        </p>
-                        <p class="meta" style="margin-top:10px; position: absolute;bottom:0">
-                            {{ $round->venue->venue_en_name }} - {{ $round->country->country_en_name }} | {{ date_format($date,"d M, Y") }}
-                            </a></p>
-                    </div>
-
-                    <div style="padding: 0 0 30px 0;">
-
-                        @if($round->course->course_sub_category_id==4)
-                        <p style="direction: rtl;">
-                            {{ Str::limit($round->course->course_en_desc, 400, '...') }}
-                        </p>
-                        @else
-                        </p>
-                        {{ Str::limit($round->course->course_en_desc, 200, ' ...') }}
-                        </p>
-                        @endif
-
-
-                        <a href="{{ url('courseDetails/'.$round->course->id) }}" style="position: absolute; bottom: 0;" class="details-btn d-flex justify-content-center align-items-center"><span class="details">Details</span><span class="lnr lnr-arrow-right"></span></a>
-                    </div>
-                </div>
-                @endforeach
-            </div>
-        </div>
-</section>
-<!-- End Popular Courses Area -->
 
 <!-- Start Clients Area -->
 <div class="row d-flex justify-content-center" style="margin:0px !important">
@@ -255,7 +199,7 @@
         <div class="title text-center">
             <h4 class="text-color" style="font-family:pruistin;font-size:30px;padding-top:50px">Our Clients</h4>
             <h1 class="mb-10" style="font-size:30px">Our Clients</h1>
-            <p>We will never stop improving</p>
+            <p>Learning With Us Is The Ticket To Success</p>
         </div>
     </div>
 </div>
@@ -286,7 +230,7 @@
         <div class="title text-center">
             <h4 class="text-color" style="font-family:pruistin;font-size:30px;padding-top:50px">CDGA in Numbers</h4>
             <h1 class="mb-10" style="font-size:30px">CDGA in Numbers</h1>
-            <p>We will never stop improving</p>
+            <p>Learning With Us Is The Ticket To Success</p>
         </div>
     </div>
 </div>
@@ -322,7 +266,7 @@
                 <div class="title text-center">
                     <h4 class="text-color" style="font-family:pruistin;font-size:30px;padding-top:50px">Our Experienced Instructors</h4>
                     <h1 class="mb-10" style="font-size:30px">Meet Your Trainer</h1>
-                    <p>We will never stop improving</p>
+                    <p>Learning With Us Is The Ticket To Success</p>
                 </div>
             </div>
         </div>
@@ -377,7 +321,7 @@
         <div class="title text-center">
             <h4 class="text-color" style="font-family:pruistin;font-size:30px;padding-top:50px">Our Partners</h4>
             <h1 class="mb-10" style="font-size:30px">Our Partners</h1>
-            <p>We will never stop improving</p>
+            <p>Learning With Us Is The Ticket To Success</p>
         </div>
     </div>
 </div>
@@ -410,7 +354,7 @@
         <div class="title text-center">
             <h4 class="text-color" style="font-family:pruistin;font-size:30px;padding-top:50px">CDGA Schedules</h4>
             <h1 class="mb-10" style="font-size:30px">Download Complete CDGA Schedules Here</h1>
-            <p>We will never stop improving</p>
+            <p>Learning With Us Is The Ticket To Success</p>
         </div>
     </div>
 </div>

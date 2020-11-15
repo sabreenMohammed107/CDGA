@@ -30,7 +30,7 @@
 					</div>
 					<div class="contact-details">
 						<h5>{{ $branch->office_phone}}</h5>
-						<p>Sun to Fri 09:00 AM to 06:00 PM</p>
+						<p>Mon to Fri 09:00 AM to 06:00 PM</p>
 					</div>
 				</div>
 				<div class="single-contact-address d-flex flex-row">

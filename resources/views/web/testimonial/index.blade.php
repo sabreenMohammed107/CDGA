@@ -21,7 +21,7 @@
 					<div class="title text-center">
 						<h4 class="text-color" style="font-family:pruistin;font-size:30px">Testimonials</h4>
 						<h1 class="mb-10" style="font-family:;font-size:30px">Testimonials</h1>
-						<p>We will never stop improving</p>
+						<p>Learning With Us Is The Ticket To Success</p>
 					</div>
 				</div>
 			</div>
@@ -63,7 +63,7 @@ Here are some of our many testimonials. Feedback from our clients is most import
 				<div class="title text-center">
 					<h4 class="text-color" style="font-family:pruistin;font-size:30px">Reviews</h4>
 					<h1 class="mb-10" style="font-family:;font-size:30px">Reviews</h1>
-					<p>We will never stop improving</p>
+					<p>Learning With Us Is The Ticket To Success</p>
 				</div>
 			</div>
 		</div>
@@ -112,7 +112,7 @@ Here are some of our many testimonials. Feedback from our clients is most import
 					<div class="title text-center">
 						<h4 class="text-color" style="font-family:pruistin;font-size:30px">Testimonials</h4>
 						<h1 class="mb-10" style="font-family:;font-size:30px">Images Gallery</h1>
-						<p>We will never stop improving</p>
+						<p>Learning With Us Is The Ticket To Success</p>
 					</div>
 				</div>
 			</div>

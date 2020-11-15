@@ -39,7 +39,7 @@
                 <div class="title text-center">
                     <h4 class="text-color" style="font-family:pruistin;font-size:30px">Technical Training</h4>
                     <h1 class="mb-10" style="font-family:;font-size:30px">Courses Details</h1>
-                    <p>We will never stop improving</p>
+                    <p>Learning With Us Is The Ticket To Success</p>
                 </div>
             </div>
         </div>
@@ -523,7 +523,7 @@
                 <div class="title text-center">
                     <h4 class="text-color" style="font-family:pruistin;font-size:30px">Technical Training</h4>
                     <h1 class="mb-10" style="font-family:;font-size:30px">Related Courses</h1>
-                    <p>We will never stop improving</p>
+                    <p>Learning With Us Is The Ticket To Success</p>
                 </div>
             </div>
         </div>
@@ -569,7 +569,7 @@
             <div class="title text-center">
                 <h4 class="text-color" style="font-family:pruistin;font-size:30px">Technical Training</h4>
                 <h1 class="mb-10" style="font-size:30px">Get Your Best Offer</h1>
-                <p>We will never stop improving</p>
+                <p>Learning With Us Is The Ticket To Success</p>
             </div>
         </div>
     </div>

@@ -129,7 +129,7 @@
 		<div class="title text-center">
 			<h4 class="text-color" style="font-family:pruistin;font-size:30px;padding-top:50px">Our Clients</h4>
 			<h1 class="mb-10" style="font-size:30px">Our Clients</h1>
-			<p>We will never stop improving
+			<p>Learning With Us Is The Ticket To Success
 
 </p>
 		</div>

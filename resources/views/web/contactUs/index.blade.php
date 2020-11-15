@@ -29,7 +29,7 @@
 					<div class="title text-center">
 						<h4 class="text-color" style="font-family:pruistin;font-size:30px">Contact Us</h4>
 						<h1 class="mb-10" style="font-size:30px">CDGA Offices and Branches</h1>
-						<p>We will never stop improving</p>
+						<p>Learning With Us Is The Ticket To Success</p>
 					</div>
 				</div>
 			</div>
@@ -56,7 +56,8 @@
                         
 							<h5>Office: {{ $branchxx->office_phone}}</h5>
 							<h5>Mobile: {{ $branchxx->mobile}}</h5>
-						</div>
+						<h5>whatsapp: +353 877 738134</h5>
+											</div>
 					</div>
 					<div class="single-contact-address d-flex flex-row">
 						<div class="icon">
